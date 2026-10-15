@@ -262,6 +262,32 @@
             border: 1px solid #ddd;
         }
 
+        /* Layout giới thiệu tác giả có thêm ảnh chân dung */
+        .author-box {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background: #faf8f5;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2ded4;
+            margin: 15px 0 25px 0;
+        }
+
+        .author-img {
+            width: 160px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
+        .author-info {
+            flex-grow: 1;
+        }
+
         /* Style riêng Trạm 3 (2 cột) */
         .tram3-grid {
             display: grid;
@@ -320,6 +346,8 @@
         }
 
         @media (max-width: 768px) {
+            .author-box { flex-direction: column; text-align: center; }
+            .author-img { width: 140px; height: 175px; margin: 0 auto; }
             .tram3-grid { grid-template-columns: 1fr; }
             .top-left-info { position: static; display: inline-flex; margin-bottom: 20px; }
             header { padding-top: 30px; }
@@ -439,7 +467,15 @@
             <p><em>Bạn đã bao giờ tự hỏi điều gì khiến “Tây Tiến” vẹn nguyên sức hút qua bao thế hệ chưa? Hãy cùng mở trang đầu tiên của tập san này để tìm lời giải đáp và cùng nhau tua ngược dòng thời gian để quay về với khung cảnh núi rừng miền Tây hùng vĩ và gặp gỡ một ngòi bút tài hoa đã kiến tạo nên kiệt tác ấy!</em></p>
             
             <p><strong>1. Chân dung nhà thơ Quang Dũng (1921 – 1988)</strong></p>
-            <p>Nhà thơ Quang Dũng tên thật là Bùi Đình Diệm, quê ở huyện Đan Phượng, Hà Nội. Ông là một nghệ sĩ đa tài: vừa viết văn, làm thơ, vừa vẽ tranh và soạn nhạc. Hồn thơ Quang Dũng đậm chất phóng khoáng, lãng mạn, hào hoa và tinh tế — mang nét đặc trưng của người tri thức Hà Thành xếp bút nghiên lên đường chiến đấu nhưng luôn nhạy cảm trước vẻ đẹp của thiên nhiên và con người. Thơ ông giàu tính tạo hình và âm nhạc, kết hợp hài hòa giữa <em>"thơ - họa - nhạc"</em>.</p>
+            
+            <!-- Khung chứa ảnh chân dung tác giả -->
+            <div class="author-box">
+                <img src="quang_dung.jpg" alt="Chân dung nhà thơ Quang Dũng" class="author-img">
+                <div class="author-info">
+                    <p style="margin-top: 0;">Nhà thơ Quang Dũng tên thật là Bùi Đình Diệm, quê ở huyện Đan Phượng, Hà Nội. Ông là một nghệ sĩ đa tài: vừa viết văn, làm thơ, vừa vẽ tranh và soạn nhạc.</p>
+                    <p style="margin-bottom: 0;">Hồn thơ Quang Dũng đậm chất phóng khoáng, lãng mạn, hào hoa và tinh tế — mang nét đặc trưng của người tri thức Hà Thành xếp bút nghiên lên đường chiến đấu nhưng luôn nhạy cảm trước vẻ đẹp của thiên nhiên và con người. Thơ ông giàu tính tạo hình và âm nhạc, kết hợp hài hòa giữa <em>"thơ - họa - nhạc"</em>.</p>
+                </div>
+            </div>
 
             <p><strong>2. Hoàn cảnh sáng tác và tác phẩm Tây Tiến</strong></p>
             <p>Bài thơ Tây Tiến được Quang Dũng sáng tác từ những trải nghiệm và hồi ức sâu sắc về đoàn quân cùng tên, được thành lập năm 1947 với phần lớn chiến sĩ là thanh niên, trí thức trẻ Hà thành. Cuối năm 1948, khi đơn vị giải thể để thành lập các đơn vị mới, Quang Dũng chuyển sang công tác ở nơi khác. Nỗi nhớ về những tháng ngày gian nan mà ấm áp tình đồng chí, cùng vẻ đẹp hùng vĩ, thơ mộng của miền Tây Bắc, đã thôi thúc ông viết nên thi phẩm này.</p>
